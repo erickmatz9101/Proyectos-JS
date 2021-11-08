@@ -1,34 +1,50 @@
                                                           /**Piedra, Papel o Tijeras */
 
-var jugador;
+var piedra=0;
 
-var maquina;
+var papel =1;
 
-function validacion(jugador, maquina){
+var tijera=2;
 
+function juego(eleccion) {
 
-    //Dentro de la funcion valida los posibles casos en el juego
+        let maquina=Math.floor(Math.random()*3);
 
+        console.log(maquina)
 
-    console.log("Es hora de jugar");
+        if (eleccion===maquina) {
 
+                console.log("Ésto es un empate");
 
-    if (jugador==="piedra" && maquina==="tijeras" || jugador==="tijeras" && maquina==="papel" || jugador==="papel" && maquina==="piedra") {
+        }else if ((eleccion===1) && (maquina===0)) {
+                
+                console.log("Gana el jugador");
 
-    console.log("Gana jugador")
-    
-        } else if (jugador==="tijeras" && maquina==="piedra" || jugador==="papel" && maquina==="tijeras" || jugador==="piedra" && maquina==="papel" ) {
+        } else if ((eleccion===2) && (maquina===1)) {
 
-                console.log("Gana la máquina")
-    
-        } else {
+                console.log("Gana el jugador");
+                
+        }else if ((eleccion===0) && (maquina===2)) {
 
-        console.log("Es un empate, juega de nuevo")
-    
+                console.log("Gana jugador");
+                
+        }else if ((eleccion!=0) && (eleccion!=1) && (eleccion!=2)) {
+
+                console.log("Elegiste una opción no válida, intentalo de nuevo")
+                
+        }else{
+                console.log("Te ganó la máquina")
         }
+                
+        
 
 
-    
+        
 }
 
 
+/**Nota: En éste caso utilice la palabra reservada let por lo siguiente: 
+ * let te permite declarar variables limitando su alcance (scope) al bloque,
+ *  declaración, o expresión donde se está usando. a diferencia de la palabra clave var;
+ *  la cual define una variable global o local en una función sin importar 
+ * el ámbito del bloque. */
