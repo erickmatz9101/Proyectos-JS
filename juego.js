@@ -1,41 +1,39 @@
                                                           /**Piedra, Papel o Tijeras */
-
-var piedra=0;
-
-var papel =1;
-
-var tijera=2;
+var opciones=[0,1,2];
 
 function juego(eleccion) {
 
-        let maquina=Math.floor(Math.random()*3);
+          for(var opcion of opciones){
 
-        console.log(maquina)
+                if (eleccion===opcion) {
 
-        if (eleccion===maquina) {
+                        let maquina=Math.floor(Math.random()*3);
 
-                console.log("Ésto es un empate");
+                        console.log(maquina);
 
-        }else if ((eleccion===1) && (maquina===0)) {
+                        if (eleccion===maquina) {
+
+                                console.log("Ésto es un empate");
+
+                        }if (eleccion===0 && maquina===2 || eleccion===1 && maquina===0 ||eleccion===2 && maquina===1) {
+
+                                console.log("Gana el jugador")
+
+                                
+                        } else {
+
+                                console.log("Gana la máquina")
+
                 
-                console.log("Gana el jugador");
+                                
+                        }
 
-        } else if ((eleccion===2) && (maquina===1)) {
+                        
+                }
 
-                console.log("Gana el jugador");
-                
-        }else if ((eleccion===0) && (maquina===2)) {
 
-                console.log("Gana jugador");
-                
-        }else if ((eleccion!=0) && (eleccion!=1) && (eleccion!=2)) {
 
-                console.log("Elegiste una opción no válida, intentalo de nuevo")
-                
-        }else{
-                console.log("Te ganó la máquina")
-        }
-                
+          }
         
 
 
