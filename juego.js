@@ -1,48 +1,53 @@
-                                                          /**Piedra, Papel o Tijeras */
-var opciones=[0,1,2];
+                     /**Juego de piedra papel o tijera pero ahora en el array usando los valores de tipo String */
 
-function juego(eleccion) {
+                     var opciones=["piedra","papel","tijera"];
 
-          for(var opcion of opciones){
 
-                if (eleccion===opcion) {
-
-                        let maquina=Math.floor(Math.random()*3);
-
-                        console.log(maquina);
-
-                        if (eleccion===maquina) {
-
-                                console.log("Ésto es un empate");
-
-                        }if (eleccion===0 && maquina===2 || eleccion===1 && maquina===0 ||eleccion===2 && maquina===1) {
-
-                                console.log("Gana el jugador")
-
+                     function juego(eleccion){
+                     
+                         
+                     
+                     
+                         for(var opcion of opciones){
+                     
+                             if (eleccion===opcion) {
+                     
+                                 let posicion=Math.floor(Math.random()*3);
+                     
+                                     var maquina=opciones[posicion];
+                     
+                                      console.log(maquina);
+                     
                                 
-                        } else {
-
-                                console.log("Gana la máquina")
-
-                
-                                
-                        }
-
-                        
-                }
-
-
-
-          }
-        
-
-
-        
-}
-
-
-/**Nota: En éste caso utilice la palabra reservada let por lo siguiente: 
- * let te permite declarar variables limitando su alcance (scope) al bloque,
- *  declaración, o expresión donde se está usando. a diferencia de la palabra clave var;
- *  la cual define una variable global o local en una función sin importar 
- * el ámbito del bloque. */
+                     
+                             
+                     
+                                 if (eleccion===maquina) {
+                     
+                                         console.log("Ésto es un empate");
+                     
+                                 }if (eleccion==="piedra" && maquina==="tijera" || eleccion==="papel" && maquina==="piedra" ||eleccion==="tijera" && maquina==="papel") {
+                     
+                                         console.log("Gana el jugador")
+                     
+                                         
+                                 } else {
+                     
+                                         console.log("Gana la máquina")
+                     
+                         
+                                         
+                                 }
+                     
+                                 
+                         }else{
+                     
+                             console.log("Haz elegido una opción no válida, intentalo de nuevo");
+                     
+                         }
+                     
+                         }
+                     
+                     }
+                     
+                     
